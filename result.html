@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="greeting">Loading...</h1>
+        <a href="index.html" class="back-link">Go Back</a>
+    </div>
+
+    <script>
+        // Get the name from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+
+        // Display a personalized greeting
+        if (name) {
+            document.getElementById('greeting').textContent = `Hello, ${name}! Welcome to the site.`;
+        } else {
+            document.getElementById('greeting').textContent = 'Hello, Guest! Welcome to the site.';
+        }
+    </script>
+</body>
+</html>
